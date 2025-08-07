@@ -9,5 +9,7 @@ if __name__ == "__main__":
         "https://www.cnb.cz/cs/financni_trhy/devizovy_trh/kurzy_devizoveho_trhu/denni_kurz.txt"
     )
     converter = CurrencyConverter(provider)
-    result = converter.convert(100, "CZK", "EUR")
-    print(result)
+    print(converter.convert(100, "EUR", "CZK"))
+    print(converter.convert(100, "CZK", "EUR"))
+    print(converter.convert(100, "EUR", "EUR"))
+    print(converter.convert(100, "EUR", "JPY"))

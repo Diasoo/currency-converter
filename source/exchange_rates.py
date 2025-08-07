@@ -50,9 +50,9 @@ class ExchangeRateProvider:
     def get_rate(self, from_currency: str, to_currency: str) -> float:
         try:
             if from_currency == "CZK":
-                return self.rates[to_currency]
+                return 1 / self.rates[to_currency]
             elif to_currency == "CZK":
-                return 1 / self.rates[from_currency]
+                return self.rates[from_currency]
             else:
                 return self.rates[from_currency] / self.rates[to_currency]
         except KeyError:
